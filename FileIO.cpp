@@ -27,6 +27,10 @@ int KP_FileIO::getFileContents(const std::string &filename, std::string &content
 		contents += line;
 	}
 
+	if (contents.length() < 1) {
+		return COULD_NOT_OPEN_FILE_TO_READ;
+	}
+
 	return SUCCESS;
 
 	//TODO fill in
