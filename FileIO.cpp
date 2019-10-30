@@ -14,7 +14,7 @@ using namespace std;
 int KP_FileIO::getFileContents(const std::string &filename, std::string &contents)
 {
 	ifstream myfile;
-	myfile.open(filename, ios::in);
+	myfile.open(filename.c_str(), ios::in);
 
 	if (!myfile.is_open()) {
 		return COULD_NOT_OPEN_FILE_TO_READ;
@@ -33,7 +33,6 @@ int KP_FileIO::getFileContents(const std::string &filename, std::string &content
 
 	return SUCCESS;
 
-	//TODO fill in
 }
 
 int KP_FileIO::writeVectortoFile(const std::string filename,std::vector<std::string> &myEntryVector)
