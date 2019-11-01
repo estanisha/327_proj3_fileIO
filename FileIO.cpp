@@ -11,8 +11,8 @@
 
 using namespace std;
 
-int KP_FileIO::getFileContents(const std::string &filename, std::string &contents)
-{
+int KP_FileIO::getFileContents(const std::string &filename,
+		std::string &contents) {
 	ifstream myfile;
 	myfile.open(filename.c_str(), ios::in);
 
@@ -23,7 +23,6 @@ int KP_FileIO::getFileContents(const std::string &filename, std::string &content
 	string line = "";
 
 	while (getline(myfile, line)) {
-		getline(myfile, line);
 		contents += line;
 	}
 
@@ -35,8 +34,8 @@ int KP_FileIO::getFileContents(const std::string &filename, std::string &content
 
 }
 
-int KP_FileIO::writeVectortoFile(const std::string filename,std::vector<std::string> &myEntryVector)
-{
+int KP_FileIO::writeVectortoFile(const std::string filename,
+		std::vector<std::string> &myEntryVector) {
 	ofstream myfile;
 	myfile.open(filename);
 
@@ -51,5 +50,4 @@ int KP_FileIO::writeVectortoFile(const std::string filename,std::vector<std::str
 	return SUCCESS;
 
 }
-
 
